@@ -1,4 +1,183 @@
-/* Carrusel horizontal Back2Basics */
+/* Efecto de colgado para los cuadros */
+.art-hang {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+}
+
+.art-hang .art-frame {
+    margin-top: 48px;
+    z-index: 6;
+}
+
+.art-nail {
+    width: 16px;
+    height: 16px;
+    background: #222;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #0008, 0 0 0 2px #444;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.art-strings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 4;
+    pointer-events: none;
+}
+/* -------- ART ELEMENTS -------- */
+.art-hang {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 24vw;
+    min-width: 260px;
+    max-width: 400px;
+}
+
+.art-nail {
+    width: 16px;
+    height: 16px;
+    background: #222;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px #0008, 0 0 0 2px #444;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.art-strings {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 0;
+    pointer-events: none;
+}
+.art-strings line {
+    stroke: #222;
+    stroke-width: 2.5px;
+    stroke-linecap: round;
+    opacity: 0.7;
+}
+
+/* Marco */
+.art-frame {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24vw;
+    min-width: 260px;
+    max-width: 400px;
+    aspect-ratio: 3/4;
+    border: 8px solid #d1bfa3;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(60,40,20,0.13), 0 2px 8px 0 rgba(0,0,0,0.08);
+    margin-bottom: 0;
+    text-decoration: none;
+    transition: transform 0.18s, box-shadow 0.18s;
+    overflow: hidden;
+    background: none;
+}
+.art-frame:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 16px 48px 0 rgba(60,40,20,0.18), 0 4px 16px 0 rgba(0,0,0,0.13);
+    z-index: 2;
+}
+
+/* Imagen dentro del marco */
+.art-img {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    filter: brightness(0.68) grayscale(0.08) contrast(0.98) saturate(0.92);
+    transition: filter 0.45s cubic-bezier(.4,1.2,.4,1), opacity 0.45s cubic-bezier(.4,1.2,.4,1);
+    opacity: 0.92;
+}
+.art1 .art-img { background-image: url('../images/art/galery1.jpg'); }
+.art2 .art-img { background-image: url('../images/art/galery2.jpg'); }
+.art3 .art-img { background-image: url('../images/art/galery3.jpg'); }
+.art4 .art-img { background-image: url('../images/art/galery4.jpg'); }
+.art5 .art-img { background-image: url('../images/art/galery5.jpg'); }
+.art6 .art-img { background-image: url('../images/art/galery6.jpg'); }
+
+/* Overlay */
+.art-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* overlay sobre la imagen */
+    background: linear-gradient(180deg, rgba(255,255,255,0.13) 0%, rgba(40,30,20,0.32) 100%);
+    mix-blend-mode: lighten;
+    opacity: 0.38;
+}
+
+/* Band con etiqueta: cinta inferior que ocupa todo el ancho del marco */
+.art-band {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: none;
+    width: 100%;
+    height: 56px;
+    border-radius: 0 0 18px 18px; /* redondeo inferior */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.48); /* cinta negra semitransparente */
+    padding: 0.2em 0.6em;
+    z-index: 3; /* por encima del brochazo */
+}
+
+.art-brush {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: none;
+    width: 100%;
+    height: 38px; /* altura del brochazo */
+    background-image: url('../images/art/trazo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    z-index: 2; /* encima del overlay, debajo de la cinta */
+    pointer-events: none;
+}
+
+.art-label {
+    font-size: 2.3rem;
+    color: #fff;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-align: center;
+    width: auto;
+    padding: 0.2em 1.2em;
+    text-shadow: 0 2px 8px #000a;
+    z-index: 4; /* por encima de la cinta */
+    position: relative;
+}
+
+/* -------- CAROUSEL -------- */
 .gallery-carousel-outer {
     width: 100vw;
     overflow-x: hidden;
@@ -8,6 +187,20 @@
     background: transparent;
     position: relative;
 }
+.gallery-carousel {
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
+    width: max-content;
+    padding: 90px 0 80px 0;
+    user-select: none;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+.gallery-carousel::-webkit-scrollbar { display: none; }
+.gallery-carousel .art-hang { flex: 0 0 auto; }
+
+/* Botones */
 .gallery-nav {
     position: absolute;
     top: 50%;
@@ -32,14 +225,8 @@
     transition: box-shadow 0.18s, background 0.18s, opacity 0.18s;
     user-select: none;
 }
-.gallery-nav-left {
-    left: 0;
-    margin-left: 8px;
-}
-.gallery-nav-right {
-    right: 0;
-    margin-right: 8px;
-}
+.gallery-nav-left { left: 0; margin-left: 8px; }
+.gallery-nav-right { right: 0; margin-right: 8px; }
 .gallery-nav:hover, .gallery-nav:focus {
     box-shadow: 0 8px 32px #0008, 0 2px 8px #fff2 inset;
     background: #a07c4a url('https://www.transparenttextures.com/patterns/wood-pattern.png');
@@ -60,35 +247,16 @@
         border-radius: 12px;
     }
 }
-.gallery-carousel {
-    display: flex;
-    flex-direction: row;
-    gap: 3vw;
-    width: max-content;
-    padding: 90px 0 80px 0;
-    user-select: none;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-}
-.gallery-carousel::-webkit-scrollbar {
-    display: none;
-}
-.gallery-carousel .art-hang {
-    flex: 0 0 auto;
-}
-.art4 .art-img { background-image: url('../images/art/galery4.jpg'); }
-.art5 .art-img { background-image: url('../images/art/galery5.jpg'); }
-.art6 .art-img { background-image: url('../images/art/galery6.jpg'); }
-/* Sección Sobre nosotros */
+
+/* -------- ABOUT SECTION -------- */
 .about-section {
     width: 100vw;
     background: #18191a url('https://www.transparenttextures.com/patterns/concrete-wall.png');
-    padding: 64px 0 64px 0;
+    padding: 64px 0;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 }
-
 .about-container {
     display: flex;
     flex-direction: row;
@@ -97,7 +265,6 @@
     width: 90vw;
     gap: 48px;
 }
-
 .about-logo {
     flex: 0 0 180px;
     display: flex;
@@ -110,7 +277,6 @@
     display: block;
     filter: drop-shadow(0 2px 12px #0006);
 }
-
 .about-text {
     flex: 1 1 0;
     color: #fff;
@@ -137,33 +303,23 @@
     margin: 0;
     text-shadow: 0 1px 4px #0008;
 }
-
 @media (max-width: 900px) {
     .about-container {
         flex-direction: column;
         align-items: center;
-        gap: 32px;
+    z-index: 3; /* por encima del brochazo */
     }
-    .about-logo {
-        justify-content: center;
-    }
-    .about-logo img {
-        width: 110px;
-    }
-    .about-text h2 {
-        font-size: 1.5rem;
-        text-align: center;
-    }
-    .about-text p {
-        font-size: 1rem;
-        text-align: center;
-    }
+    .about-logo { justify-content: center; }
+    .about-logo img { width: 110px; }
+    .about-text h2 { font-size: 1.5rem; text-align: center; }
+    .about-text p { font-size: 1rem; text-align: center; }
 }
-/* Marca de agua inferior izquierda */
+
+/* -------- WATERMARKS -------- */
 .watermark-badge {
     position: fixed;
     left: 18px;
-    bottom: 12px;
+    z-index: 4; /* por encima de la cinta */
     font-size: 1rem;
     color: #fff;
     opacity: 0.45;
@@ -173,69 +329,26 @@
     letter-spacing: 1px;
     text-shadow: 0 1px 4px #0008;
 }
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-
-body {
-    margin: 0;
-    font-family: 'Bebas Neue', 'Segoe UI', Arial, sans-serif;
-    background: #eae6df url('https://www.transparenttextures.com/patterns/white-wall-3.png'); /* textura sutil de pared */
-    min-height: 100vh;
-    /* Efecto de colgado con cuerda y clavo */
-    .art-hang {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: relative;
-        width: 24vw;
-        min-width: 260px;
-        max-width: 400px;
-    }
-
-    .art-nail {
-        width: 16px;
-        height: 16px;
-        background: #222;
-        border-radius: 50%;
-        box-shadow: 0 2px 8px #0008, 0 0 0 2px #444;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 0;
-    }
-
-    .art-strings {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 60px;
-        z-index: 0;
-        pointer-events: none;
-    }
-    .art-strings line {
-        stroke: #222;
-        stroke-width: 2.5px;
-        stroke-linecap: round;
-        opacity: 0.7;
-    }
-
-    .art-hang .art-frame {
-        margin-top: 48px;
-        position: relative;
-        z-index: 1;
-    }
-.navbar a:hover {
-    color: #FFD700;
+.version-badge {
+    position: fixed;
+    right: 18px;
+    bottom: 12px;
+    font-size: 1rem;
+    color: #232323;
+    opacity: 0.45;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    pointer-events: none;
+    z-index: 100;
+    letter-spacing: 1px;
 }
 
+/* -------- NAVBAR -------- */
 header {
     background: #000;
     padding: 0;
     box-shadow: 0 2px 12px rgba(0,0,0,0.10);
     height: 64px;
 }
-
 .navbar {
     display: flex;
     justify-content: center;
@@ -244,7 +357,6 @@ header {
     background: #000;
     position: relative;
 }
-
 .navbar ul {
     list-style: none;
     display: flex;
@@ -272,7 +384,6 @@ header {
     filter: drop-shadow(0 2px 8px #0008);
     margin-top: 4px;
 }
-
 .navbar a {
     color: #fff;
     text-decoration: none;
@@ -281,248 +392,17 @@ header {
     transition: color 0.2s;
     font-weight: 500;
 }
+.navbar a:hover { color: #FFD700; }
 
-.navbar a:hover {
-    color: #eab676;
+/* -------- GENERAL -------- */
+body {
+    margin: 0;
+    font-family: 'Bebas Neue', 'Segoe UI', Arial, sans-serif;
+    background: #eae6df url('https://www.transparenttextures.com/patterns/white-wall-3.png');
+    min-height: 100vh;
 }
 
-
-}
-
-
-.art-frame {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24vw;
-    min-width: 260px;
-    max-width: 400px;
-    aspect-ratio: 3/4;
-    border: 8px solid #d1bfa3;
-    border-radius: 18px;
-    box-shadow: 0 8px 32px 0 rgba(60,40,20,0.13), 0 2px 8px 0 rgba(0,0,0,0.08);
-    margin-bottom: 0;
-    text-decoration: none;
-    transition: transform 0.18s, box-shadow 0.18s;
-    overflow: hidden;
-    background: none;
-}
-
-.art-frame:hover {
-    transform: translateY(-12px) scale(1.03);
-    box-shadow: 0 16px 48px 0 rgba(60,40,20,0.18), 0 4px 16px 0 rgba(0,0,0,0.13);
-    z-index: 2;
-}
-
-.art-img {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-    filter: brightness(0.68) grayscale(0.08) contrast(0.98) saturate(0.92);
-    transition: filter 0.45s cubic-bezier(.4,1.2,.4,1), opacity 0.45s cubic-bezier(.4,1.2,.4,1);
-    opacity: 0.92;
-}
-.art1 .art-img { background-image: url('../images/art/galery1.jpg'); }
-.art2 .art-img { background-image: url('../images/art/galery2.jpg'); }
-.art3 .art-img { background-image: url('../images/art/galery3.jpg'); }
-
-.art-overlay {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    background: linear-gradient(180deg, rgba(255,255,255,0.13) 0%, rgba(40,30,20,0.32) 100%);
-    mix-blend-mode: lighten;
-    .navbar a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.18rem;
-        letter-spacing: 1.5px;
-        transition: color 0.2s;
-        font-family: 'Bebas Neue', Arial, sans-serif;
-        font-weight: 700;
-        text-transform: uppercase;
-        padding: 0 8px;
-    }
-    .navbar a:hover {
-        color: #FFD700;
-    }
-    opacity: 0.38;
-}
-
-.art-band {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    min-width: 120px;
-    min-height: 56px;
-    background: rgba(24, 24, 24, 0.68);
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.45s cubic-bezier(.4,1.2,.4,1), background 0.45s cubic-bezier(.4,1.2,.4,1);
-    z-index: 4;
-    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.13);
-}
-
-.art-frame:hover .art-band {
-    opacity: 1;
-}
-
-.art-label {
-    font-size: 2.3rem;
-    color: #fff;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    font-weight: 600;
-    letter-spacing: 2.5px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: flex-end;
-        gap: 3vw;
-        width: 80vw;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 90px 0 0 0; /* más espacio arriba para las cuerdas */
-    font-size: 2.8rem;
-}
-
-/* Versión discreta en esquina inferior derecha */
-.version-badge {
-    position: fixed;
-    right: 18px;
-    bottom: 12px;
-    font-size: 1rem;
-    color: #232323;
-    opacity: 0.45;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    pointer-events: none;
-    z-index: 100;
-    letter-spacing: 1px;
-}
-
-/* Ajuste de separación y responsividad */
-    
-    .art-frame {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 24vw;
-        min-width: 260px;
-        max-width: 400px;
-        aspect-ratio: 3/4;
-        border: 8px solid #d1bfa3;
-        border-radius: 18px;
-        box-shadow: 0 8px 32px 0 rgba(60,40,20,0.13), 0 2px 8px 0 rgba(0,0,0,0.08);
-        margin-bottom: 0;
-        text-decoration: none;
-        transition: transform 0.18s, box-shadow 0.18s;
-        overflow: hidden;
-        background: none;
-    }
-    
-    .art-frame:hover {
-        transform: translateY(-12px) scale(1.03);
-        box-shadow: 0 16px 48px 0 rgba(60,40,20,0.18), 0 4px 16px 0 rgba(0,0,0,0.13);
-        z-index: 2;
-    }
-    
-    .art-img {
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        background-position: center;
-        z-index: 1;
-        filter: brightness(0.68) grayscale(0.08) contrast(0.98) saturate(0.92);
-        transition: filter 0.45s cubic-bezier(.4,1.2,.4,1), opacity 0.45s cubic-bezier(.4,1.2,.4,1);
-        opacity: 0.92;
-    }
-    .art1 .art-img { background-image: url('../images/art/galery1.jpg'); }
-    .art2 .art-img { background-image: url('../images/art/galery2.jpg'); }
-    .art3 .art-img { background-image: url('../images/art/galery3.jpg'); }
-    
-    .art-overlay {
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 2;
-        background: linear-gradient(180deg, rgba(255,255,255,0.13) 0%, rgba(40,30,20,0.32) 100%);
-        mix-blend-mode: lighten;
-        opacity: 0.38;
-    }
-    
-    .art-band {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 80%;
-        min-width: 120px;
-        min-height: 56px;
-        background: rgba(24, 24, 24, 0.68);
-        border-radius: 18px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.45s cubic-bezier(.4,1.2,.4,1), background 0.45s cubic-bezier(.4,1.2,.4,1);
-        z-index: 4;
-        box-shadow: 0 2px 16px 0 rgba(0,0,0,0.13);
-    }
-    
-    .art-frame:hover .art-band {
-        opacity: 1;
-    }
-    
-    .art-label {
-        font-size: 2.3rem;
-        color: #fff;
-        font-family: 'Georgia', 'Times New Roman', serif;
-        font-weight: 600;
-        letter-spacing: 2.5px;
-        text-align: center;
-        text-shadow: 0 8px 32px rgba(0,0,0,0.38), 0 2px 0 #fff8, 0 4px 16px #0008;
-        user-select: none;
-        padding: 0 24px;
-        line-height: 1.2;
-        transition: font-size 0.45s cubic-bezier(.4,1.2,.4,1);
-    }
-    
-    .art-frame:hover .art-label {
-        font-size: 2.8rem;
-    }
-
-@media (max-width: 900px) {
-    .gallery-wall {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-        width: 98vw;
-        padding: 30px 0 0 0;
-    }
-    .art-frame {
-        width: 80vw;
-        min-width: 180px;
-        max-width: 98vw;
-    }
-}
-
+/* -------- RESPONSIVE -------- */
 @media (max-width: 900px) {
     .gallery-wall {
         flex-direction: column;

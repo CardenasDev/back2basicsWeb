@@ -1,0 +1,227 @@
+/*
+RcardenasDev
+*/
+
+/*Eliminamos los margenes y paddings que agrega el navegador por defecto*/
+
+/* start all section */
+#intro,
+#intro .fp-slide,
+#intro .fp-tableCell,
+
+#sec1,
+#sec1 .fp-slide,
+#sec1 .fp-tableCell,
+
+#sec2,
+#sec2 .fp-slide,
+#sec2 .fp-tableCell,
+
+/*stlBody*/
+body {
+    background: #000000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    height: auto !important;
+}
+/* /stlBody */
+
+/* stlA : style <a href>*/
+#stlA {
+    background-color: rgba(0, 0, 0, 0);
+    color: #4f339c;
+    border-color: white;
+}
+/* /stlA */
+
+#stlA:hover {
+    background: #4f339c;
+    color: white;
+}
+
+/* /allsection */
+
+/* allheading */
+h1,h2,h3,h4,h5 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* /allheading */
+
+/* allsection */
+#sec1,#sec2 {
+    padding-top: 100px;
+    padding-bottom: 120px;
+}
+
+/* /allsection */
+
+
+/* intro */
+#intro {
+    background: url('../images/bg-des.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 120px;
+    padding-bottom: 140px;
+    text-align: center;
+}
+
+#intro h1 {
+    border: 2px solid #4f339c;
+    color: #4f339c;
+    display: inline-block;
+    letter-spacing: 6px;
+    padding: 25px 5px;
+    margin: 30px 0;
+}
+
+#intro h2 {
+    padding-bottom: 10px;
+    color:#000000;
+}
+
+#intro h3 {
+    padding-bottom: 10px;
+    color:#000000;
+}
+
+#intro p {
+    padding-bottom: 10px;
+    color:#000000;
+}
+
+#intro .btn {
+    background: transparent;
+    border: 2px solid #000000;
+    color: #000000  ;
+    font-size: 16px;
+    font-weight: bold;
+    width: 180px;
+    height: 60px;
+    margin-top: 40px;
+    padding-top: 18px;
+    transition: all 0.4s ease-in-out;
+}
+
+#intro .btn:hover {
+    background: #4f339c;
+    border-color: transparent;
+}
+
+/* /intro */
+
+/* sec1 */
+#sec1 {
+    background: #1a1a1a;
+    color: white;
+}
+
+#sec1 h2 {
+    text-align: center;
+}
+
+#sec1 .media {
+    margin-top: 30px;
+}
+
+#sec1 .media .fa {
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    color: #4f339c;
+    font-size: 24px;
+    margin-right: 24px;
+    width: 60px;
+    height: 60px;
+    line-height: 55px;
+    text-align: center;
+    vertical-align: middle;
+    transition: all 0.4s ease-in;
+}
+
+#sec1 .media .fa:hover {
+    background: #ffffff;
+    cursor: pointer;
+}
+
+#sec1 .media .media-heading {
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+
+
+/* /sec1 */  
+
+/* sec2 */
+#sec2 {
+    background: #000000;
+    color: white;
+}
+
+#sec2 h4 {
+    padding: 15px 0;
+    color: #4f339c;
+}
+
+#sec2 .progress {
+    border-radius: 4px;
+    background: #ffffff;
+    height: 4px;
+}
+
+#sec2 .progress .progress-bar-danger {
+    background: #4f339c;
+}
+
+#sec2 .text-top {
+    padding-top: 50px;
+}
+
+#sec2 span {
+    color: #ffffff;
+    font-weight: bold;
+    display: block;
+    padding-bottom: 6px;
+}
+
+#sec2 small {
+    font-weight: bold;
+    float: right;
+}
+
+/* /sec2 */
+
+
+/* Estilos específicos para la sección SERVICIOS en des.php */
+.services-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+}
+.services-row > div {
+  margin-bottom: 20px;
+}
+/* Para filas con solo 2 elementos */
+.services-row.two-items > div {
+  flex: 0 0 40%;
+  max-width: 40%;
+}
+/* Para cuando hay un elemento suelto en segunda fila (ej: 4 servicios en 2+2) */
+.services-row.single-center > div:last-child {
+  flex: 0 0 50%;
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-title {
+  color: #4f339c;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+

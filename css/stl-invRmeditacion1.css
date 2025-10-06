@@ -1,0 +1,408 @@
+/*
+RcardenasDev
+*/
+
+/*Eliminamos los margenes y paddings que agrega el navegador por defecto*/
+
+/* start all section */
+#intro,
+#intro .fp-slide,
+#intro .fp-tableCell,
+
+#sec1,
+#sec1 .fp-slide,
+#sec1 .fp-tableCell,
+
+#sec2,
+#sec2 .fp-slide,
+#sec2 .fp-tableCell,
+
+#sec3,
+#sec3 .fp-slide,
+#sec3 .fp-tableCell,
+
+#sec4,
+#sec4 .fp-slide,
+#sec4 .fp-tableCell,
+
+#sec5,
+#sec5 .fp-slide,
+#sec5 .fp-tableCell,
+
+#sec6,
+#sec6 .fp-slide,
+#sec6 .fp-tableCell,
+
+
+
+/*stlBody*/
+body {
+    background: #000000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: auto !important;
+}
+/* /stlBody */
+
+/* stlA : style <a href>*/
+#stlA {
+    background-color: rgba(0, 0, 0, 0);
+    color: #0d8ac9;
+    border-color: white;
+}
+/* /stlA */
+
+#stlA:hover {
+    background: #0d8ac9;
+    color: white;
+}
+
+/* /allsection */
+
+/* allheading */
+h1,h2,h3,h4,h5 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* /allheading */
+
+/* allsection */
+#sec1,#sec2,#sec3,#sec4,#sec5,#sec6  {
+    padding-top: 80px;
+    padding-bottom: 100px;
+}
+
+/* /allsection */
+
+
+/* intro */
+#intro {
+    background: url('../images/inv/Rmeditacion/bg-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 120px;
+    padding-bottom: 140px;
+    text-align: center;
+    font-size: 18px;
+    color: #000000;
+    
+}
+
+
+#intro h1 {
+    border: 2px solid #0d8ac9;
+    color: #0d8ac9;
+    display: inline-block;
+    letter-spacing: 6px;
+    padding: 25px 5px;
+    margin: 30px 0;
+}
+
+#intro h2 {
+    padding-bottom: 10px;
+}
+
+#intro .btn {
+    background: transparent;
+    border: 2px solid #0d8ac9;
+    color: #0d8ac9;
+    font-size: 16px;
+    font-weight: bold;
+    width: 180px;
+    height: 60px;
+    margin-top: 40px;
+    padding-top: 18px;
+    transition: all 0.4s ease-in-out;
+}
+
+#intro .btn:hover {
+    background: #0d8ac9;
+    color: #ffffff;
+    border-color: transparent;
+}
+
+/* /intro */
+
+/* sec1 */
+#sec1 {
+    background: #1a1a1a;
+    color: white;
+    text-align: justify;
+}
+
+#sec1 h2 {
+    text-align: center;
+}
+
+#sec1 h4 {
+    padding: 15px 0;
+    color: #0d8ac9;
+}
+
+#sec1 .media {
+    margin-top: 30px;
+}
+
+#sec1 .media .fa {
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    color: #0d8ac9;
+    font-size: 24px;
+    margin-right: 24px;
+    width: 60px;
+    height: 60px;
+    line-height: 55px;
+    text-align: center;
+    vertical-align: middle;
+    transition: all 0.4s ease-in;
+}
+
+#sec1 .media .fa:hover {
+    background: #ffffff;
+    cursor: pointer;
+}
+
+#sec1 .media .media-heading {
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+
+
+/* /sec1 */  
+
+/* sec2 */
+#sec2 {
+    background: #000000;
+    color: white;
+    text-align: justify;
+}
+
+#sec2 h4 {
+    padding: 15px 0;
+    color: #0d8ac9;
+}
+
+#sec2 .progress {
+    border-radius: 4px;
+    background: #ffffff;
+    height: 4px;
+}
+
+#sec2 .progress .progress-bar-danger {
+    background: #0d8ac9;
+}
+
+#sec2 .text-top {
+    padding-top: 50px;
+}
+
+#sec2 span {
+    color: #ffffff;
+    font-weight: bold;
+    display: block;
+    padding-bottom: 6px;
+}
+
+#sec2 small {
+    font-weight: bold;
+    float: right;
+}
+
+/* /sec2 */
+
+
+/* sec3 */
+#sec3 {
+    background: #0e0d0d;
+    color: white;
+    text-align: justify;
+}
+
+#sec3 h4 {
+    padding: 15px 0;
+    color: #0d8ac9;
+}
+
+#sec3 .progress {
+    border-radius: 4px;
+    background: #ffffff;
+    height: 4px;
+}
+
+#sec3 .progress .progress-bar-danger {
+    background: #0d8ac9;
+}
+
+#sec3 .text-top {
+    padding-top: 50px;
+}
+
+#sec3 span {
+    color: #ffffff;
+    font-weight: bold;
+    display: block;
+    padding-bottom: 6px;
+}
+
+#sec3 small {
+    font-weight: bold;
+    float: right;
+}
+
+/* /sec3 */
+
+
+/* sec4 */
+#sec4 {
+    background: #000000;
+    color: white;
+    text-align: justify;
+}
+
+#sec4 h4 {
+    padding: 15px 0;
+    color: #0d8ac9;
+}
+
+#sec4 .progress {
+    border-radius: 4px;
+    background: #ffffff;
+    height: 4px;
+}
+
+#sec4 .progress .progress-bar-danger {
+    background: #0d8ac9;
+}
+
+#sec4 .text-top {
+    padding-top: 50px;
+}
+
+#sec4 span {
+    color: #ffffff;
+    font-weight: bold;
+    display: block;
+    padding-bottom: 6px;
+}
+
+#sec4 small {
+    font-weight: bold;
+    float: right;
+}
+
+/* /sec4 */
+
+
+/* sec5 */
+#sec5 {
+    background: #0e0d0d;
+    color: white;
+    text-align: justify;
+}
+
+#sec5 h4 {
+    padding: 15px 0;
+    color: #0d8ac9;
+}
+
+#sec5 .progress {
+    border-radius: 4px;
+    background: #ffffff;
+    height: 4px;
+}
+
+#sec5 .progress .progress-bar-danger {
+    background: #0d8ac9;
+}
+
+#sec5 .text-top {
+    padding-top: 50px;
+}
+
+#sec5 span {
+    color: #ffffff;
+    font-weight: bold;
+    display: block;
+    padding-bottom: 6px;
+}
+
+#sec5 small {
+    font-weight: bold;
+    float: right;
+}
+
+#sec5 .btn {
+    background: transparent;
+    border: 2px solid #0d8ac9;
+    color: #0d8ac9;
+    font-size: 20px;
+    transition: all 0.4s ease-in-out;
+}
+
+#sec5 .btn:hover {
+    background: #0d8ac9;
+    color: #ffffff;
+}
+
+/* /sec5 */
+
+
+
+/* sec6 */
+#sec6 {
+    background: #000000;
+    color: white;
+    text-align: justify;
+}
+/* /sec6 */
+/*modals*/
+/* Popup container - can be anything you want */
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* The actual popup */
+  .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: -150;
+    left: 50%;
+    margin-left: -80px;
+  }
+  
+  
+  
+  /* Toggle this class - hide and show the popup */
+  .popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+  
+  /* Add animation (fade in the popup) */
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }

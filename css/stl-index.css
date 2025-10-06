@@ -1,0 +1,376 @@
+
+/* Estilo para resaltar textos en el intro */
+.intro-highlight {
+    display: grid;
+    place-items: center;
+    background: rgb(117 217 233 / 74%); /* #D43F52 con opacidad */
+    color: #010755;
+    border-radius: 18px;
+    padding: 32px 24px;
+    margin: 0 auto 24px auto;
+    max-width: 700px;
+    box-shadow: 0 4px 24px 0 rgba(0,0,0,0.25);  
+    font-weight: bold;
+}
+/*
+RcardenasDev
+*/
+
+/*Eliminamos los margenes y paddings que agrega el navegador por defecto*/
+
+
+
+
+
+
+/* start all section */
+#intro,
+#intro .fp-slide,
+#intro .fp-tableCell,
+
+#sec1,
+#sec1 .fp-slide,
+#sec1 .fp-tableCell,
+
+#sec2,
+#sec2 .fp-slide,
+#sec2 .fp-tableCell,
+
+#sec3,
+#sec3 .fp-slide,
+#sec3 .fp-tableCell,    
+
+
+
+footer,
+footer .fp-slide,
+footer .fp-tableCell 
+
+/*stlBody*/
+body {
+    background: #000000;
+    color: #fcf8e3;
+    font-family: 'Raleway', sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    height: auto !important;
+}
+/* /stlBody */
+
+/* stlA : style <a href>*/
+#stlA {
+    background-color: rgba(0, 0, 0, 0);
+    color: #00eaff;
+    border-color: white;
+}
+/* /stlA */
+
+#stlA:hover {
+    background: #00eaff;
+    color: white;
+}
+
+/* /allsection */
+
+/* allheading */
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* /allheading */
+
+/* allsection */
+#sec1,
+#sec2,
+#sec3{
+    padding-top: 100px;
+    padding-bottom: 120px;
+}
+
+/* /allsection */
+
+/* simpletextrotator */
+.rotating {
+    display: inline-block;
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateX(0) rotateY(0) rotateZ(0);
+    -moz-transform: rotateX(0) rotateY(0) rotateZ(0);
+    -ms-transform: rotateX(0) rotateY(0) rotateZ(0);
+    -o-transform: rotateX(0) rotateY(0) rotateZ(0);
+    transform: rotateX(0) rotateY(0) rotateZ(0);
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    -webkit-transform-origin-x: 50%;
+}
+
+.rotating.flip {
+    position: relative;
+}
+
+.rotating .front,
+.rotating .back {
+    left: 0;
+    top: 0;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.rotating .front {
+    position: absolute;
+    display: inline-block;
+    -webkit-transform: translate3d(0, 0, 1px);
+    -moz-transform: translate3d(0, 0, 1px);
+    -ms-transform: translate3d(0, 0, 1px);
+    -o-transform: translate3d(0, 0, 1px);
+    transform: translate3d(0, 0, 1px);
+}
+
+.rotating.flip .front {
+    z-index: 1;
+}
+
+.rotating .back {
+    display: block;
+    opacity: 0;
+}
+
+.rotating.spin {
+    -webkit-transform: rotate(360deg) scale(0);
+    -moz-transform: rotate(360deg) scale(0);
+    -ms-transform: rotate(360deg) scale(0);
+    -o-transform: rotate(360deg) scale(0);
+    transform: rotate(360deg) scale(0);
+}
+
+.rotating.flip .back {
+    z-index: 2;
+    display: block;
+    opacity: 1;
+
+    -webkit-transform: rotateY(180deg) translate3d(0, 0, 0);
+    -moz-transform: rotateY(180deg) translate3d(0, 0, 0);
+    -ms-transform: rotateY(180deg) translate3d(0, 0, 0);
+    -o-transform: rotateY(180deg) translate3d(0, 0, 0);
+    transform: rotateY(180deg) translate3d(0, 0, 0);
+}
+
+.rotating.flip.up .back {
+    -webkit-transform: rotateX(180deg) translate3d(0, 0, 0);
+    -moz-transform: rotateX(180deg) translate3d(0, 0, 0);
+    -ms-transform: rotateX(180deg) translate3d(0, 0, 0);
+    -o-transform: rotateX(180deg) translate3d(0, 0, 0);
+    transform: rotateX(180deg) translate3d(0, 0, 0);
+}
+
+.rotating.flip.cube .front {
+    -webkit-transform: translate3d(0, 0, 100px) scale(0.9, 0.9);
+    -moz-transform: translate3d(0, 0, 100px) scale(0.85, 0.85);
+    -ms-transform: translate3d(0, 0, 100px) scale(0.85, 0.85);
+    -o-transform: translate3d(0, 0, 100px) scale(0.85, 0.85);
+    transform: translate3d(0, 0, 100px) scale(0.85, 0.85);
+}
+
+.rotating.flip.cube .back {
+    -webkit-transform: rotateY(180deg) translate3d(0, 0, 100px) scale(0.9, 0.9);
+    -moz-transform: rotateY(180deg) translate3d(0, 0, 100px) scale(0.85, 0.85);
+    -ms-transform: rotateY(180deg) translate3d(0, 0, 100px) scale(0.85, 0.85);
+    -o-transform: rotateY(180deg) translate3d(0, 0, 100px) scale(0.85, 0.85);
+    transform: rotateY(180deg) translate3d(0, 0, 100px) scale(0.85, 0.85);
+}
+
+.rotating.flip.cube.up .back {
+    -webkit-transform: rotateX(180deg) translate3d(0, 0, 100px) scale(0.9, 0.9);
+    -moz-transform: rotateX(180deg) translate3d(0, 0, 100px) scale(0.85, 0.85);
+    -ms-transform: rotateX(180deg) translate3d(0, 0, 100px) scale(0.85, 0.85);
+    -o-transform: rotateX(180deg) translate3d(0, 0, 100px) scale(0.85, 0.85);
+    transform: rotateX(180deg) translate3d(0, 0, 100px) scale(0.85, 0.85);
+}
+
+/* /simpletextrotator */
+
+/* intro */
+#intro {
+    background: url('../images/bg-index.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding-top: 120px;
+    padding-bottom: 140px;
+    text-align: center;
+}
+
+#intro h1 {
+    border: 2px solid #D43F52;
+    color: #D43F52;
+    display: inline-block;
+    letter-spacing: 6px;
+    padding: 25px 35px;
+    margin: 30px 0;
+}
+
+#intro h2 {
+    padding-bottom: 10px;
+}
+
+#intro .btn {
+    background: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    width: 180px;
+    height: 60px;
+    margin-top: 40px;
+    padding-top: 18px;
+    transition: all 0.4s ease-in-out;
+}
+
+#intro .btn:hover {
+    background: linear-gradient(135deg, #00eaff 60%, #0a6cff 100%);
+    border-color: transparent;
+}
+
+/* /intro */
+
+/* sec1 */
+#sec1 {
+    background: #1a1a1a;
+}
+
+#sec1 h2 {
+    text-align: center;
+}
+
+#sec1 .media {
+    margin-top: 30px;
+}
+
+#sec1 .media .fa {
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    color: #00eaff;
+    font-size: 24px;
+    margin-right: 24px;
+    width: 60px;
+    height: 60px;
+    line-height: 55px;
+    text-align: center;
+    vertical-align: middle;
+    transition: all 0.4s ease-in;
+}
+
+#sec1 .media .fa:hover {
+    background: #ffffff;
+    cursor: pointer;
+}
+
+#sec1 .media .media-heading {
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+
+
+/* /sec1 */  
+
+/* sec2 */
+#sec2 h4 {
+    padding: 15px 0;
+    color: #00eaff;
+}
+
+#sec2 .progress {
+    border-radius: 4px;
+    background: #ffffff;
+    height: 4px;
+}
+
+#sec2 .progress .progress-bar-danger {
+    background: #00eaff;
+}
+
+#sec2 .text-top {
+    padding-top: 50px;
+}
+
+#sec2 span {
+    color: #ffffff;
+    font-weight: bold;
+    display: block;
+    padding-bottom: 6px;
+}
+
+#sec2 small {
+    font-weight: bold;
+    float: right;
+}
+
+/* /sec2 */
+/* sec3 */
+#sec3 {
+    background: #1a1a1a;
+}
+
+#sec3 h2 {
+    text-align: center;
+}
+
+#sec3 .media {
+    margin-top: 30px;
+}
+
+#sec3 .media .fa {
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    color: #00eaff;
+    font-size: 24px;
+    margin-right: 24px;
+    width: 60px;
+    height: 60px;
+    line-height: 55px;
+    text-align: center;
+    vertical-align: middle;
+    transition: all 0.4s ease-in;
+}
+
+#sec3 .media .fa:hover {
+    background: #ffffff;
+    cursor: pointer;
+}
+
+#sec3 .media .media-heading {
+    font-weight: 600;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+/* Sobrescribir Bootstrap para progress-bar-danger solo en sec3 */
+#sec3 .progress-bar-danger {
+    background-color: #00eaff !important;
+}
+
+#sec3 .text-danger,
+#sec3 .media .text-danger {
+    color: #00eaff !important;
+}
+/* /sec3 */  
+
+
+
+
+
